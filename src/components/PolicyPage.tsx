@@ -5,7 +5,7 @@ import { PolicyLinks } from "./PolicyLinks";
 
 export function PolicyPage({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="flex h-[100svh] flex-col overflow-hidden px-4 py-6 text-[var(--foreground)] sm:px-6 sm:py-10">
+    <div className="crackd-page flex h-[100svh] flex-col overflow-hidden px-4 py-6 text-[var(--foreground)] sm:px-6 sm:py-10">
       <main className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-contain p-1">
         <Link href="/" className="mb-5 inline-block rounded-lg px-2 py-2 text-sm font-semibold text-[var(--muted)]">
           ← Back to Humor Study

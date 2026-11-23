@@ -142,7 +142,7 @@ export default async function NumericStudyPage({
   return (
     <div
       id="numeric-study-root"
-      className="relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 py-3 text-[var(--foreground)] sm:px-6 sm:py-4"
+      className="crackd-page relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 py-3 text-[var(--foreground)] sm:px-6 sm:py-4"
     >
       {studyResult.study.is_private === true ? (
         <PrivateStudyDisclaimer key={`${user.id}:${studyResult.study.id}`} />
@@ -195,7 +195,7 @@ function StudyNavigation() {
 
 function ExpiredStudyPage({ isPrivate }: { isPrivate: boolean }) {
   return (
-    <main className="flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 py-3 text-[var(--foreground)] sm:px-6 sm:py-4">
+    <main className="crackd-page flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 py-3 text-[var(--foreground)] sm:px-6 sm:py-4">
       {isPrivate ? <PrivateStudyDisclaimer /> : null}
       <StudyNavigation />
       <div className="flex min-h-0 flex-1 items-center justify-center text-center">

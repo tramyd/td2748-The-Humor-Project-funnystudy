@@ -13,7 +13,7 @@ export default async function LoginPage({
   const displayMessage = Array.isArray(message) ? message[0] : message;
 
   return (
-    <div className="relative flex h-[100svh] flex-col overflow-hidden px-0 text-[var(--foreground)]">
+    <div className="crackd-login-page relative flex h-[100svh] flex-col overflow-hidden px-0 text-[var(--foreground)]">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-amber-500/20 blur-[100px] animate-orb" />
         <div className="absolute right-4 top-6 h-44 w-44 rounded-full bg-amber-300/20 blur-3xl animate-orb-reverse" />

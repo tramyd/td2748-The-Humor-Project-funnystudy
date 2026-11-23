@@ -39,7 +39,7 @@ export default async function NotificationPreferencesPage({ searchParams }: {
     || user.email || "your account";
 
   return (
-    <div id="notification-preferences-root" className="relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 pt-6 pb-24 text-[var(--foreground)] sm:px-6">
+    <div id="notification-preferences-root" className="crackd-page relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 pt-6 pb-24 text-[var(--foreground)] sm:px-6">
       <main className="mx-auto flex min-h-0 w-full max-w-xl flex-1 items-center overflow-y-auto overscroll-contain py-4">
         <section className="glass-panel my-auto w-full rounded-3xl p-6 sm:p-8" aria-labelledby="notification-question">
           <h1 id="notification-question" className="text-2xl font-bold leading-snug">New study notifications</h1>

@@ -120,7 +120,7 @@ function DemographicsShell({
   return (
     <div
       id="demographics-root"
-      className="relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 py-4 text-[var(--foreground)] sm:px-6 sm:py-6"
+      className="crackd-page relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 py-4 text-[var(--foreground)] sm:px-6 sm:py-6"
     >
       <main className="mx-auto flex w-full max-w-4xl flex-1 min-h-0 items-start justify-center overflow-y-auto py-2 sm:py-4">
         {children}

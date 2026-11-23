@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 import { AccountMenu } from "@/components/AccountMenu";
+import { CrackdHome } from "@/components/CrackdHome";
 import { LocalDateTime } from "@/components/LocalDateTime";
 import { SubmitButton } from "@/components/SubmitButton";
 import { StudyQuestionForm } from "@/components/StudyQuestionForm";
@@ -111,7 +112,7 @@ export default async function Home({
   return (
     <div
       id="home-root"
-      className="relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 pt-8 pb-24 text-[var(--foreground)] sm:px-6 sm:pt-12"
+      className="crackd-page relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 pt-8 pb-24 text-[var(--foreground)] sm:px-6 sm:pt-12"
     >
       <main
         id="home-content"
@@ -271,63 +272,7 @@ export default async function Home({
             </section>
           </div>
         ) : (
-          <>
-            <header className="mb-6 space-y-2 sm:mb-8">
-              <h1 className="text-3xl font-bold sm:text-4xl">Active studies</h1>
-              <p className="text-sm text-[var(--muted)] sm:text-base">
-                Choose a study to start rating captions.
-              </p>
-            </header>
-            {participationError ? (
-              <p role="alert" className="mb-4 text-sm text-[var(--error-text)]">
-                We couldn&apos;t load your study completion status. Please refresh to try again.
-              </p>
-            ) : null}
-            <ul className="space-y-3">
-              {activeStudyIdentities.map((study) => (
-                <li key={study.id}>
-                  <Link
-                    href={`/study/${study.id}`}
-                    prefetch={false}
-                    className="glass-panel flex items-center gap-4 rounded-2xl p-5 transition hover:border-[var(--accent)] hover:bg-[var(--surface-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-strong)] sm:p-6"
-                  >
-                    <div className="min-w-0 flex-1 space-y-2 break-words">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h2 className="text-lg font-semibold sm:text-xl">
-                          Study {study.id}
-                        </h2>
-                        {isStudyCompleted(participationByStudy.get(study.id)) ? (
-                          <span className="rounded-full bg-[var(--accent)] px-3 py-1 text-xs font-semibold text-[var(--accent-contrast)]">
-                            Completed
-                          </span>
-                        ) : participationByStudy.get(study.id)?.started_at ? (
-                          <span className="text-xs font-semibold text-[var(--muted)]">In progress</span>
-                        ) : null}
-                      </div>
-                      <dl className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 text-sm leading-6 text-[var(--muted)]">
-                        <dt>Start</dt>
-                        <dd>
-                          {study.start_datetime_utc ? (
-                            <LocalDateTime value={study.start_datetime_utc} />
-                          ) : "No start date"}
-                        </dd>
-                        <dt>End</dt>
-                        <dd>
-                          {study.end_datetime_utc ? (
-                            <LocalDateTime value={study.end_datetime_utc} />
-                          ) : "No end date"}
-                        </dd>
-                      </dl>
-                    </div>
-                    <ArrowRightIcon
-                      aria-hidden
-                      className="h-5 w-5 shrink-0 text-[var(--accent-strong)]"
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </>
+          <CrackdHome studyId={activeStudyIdentities[0]?.id} />
         )}
       </main>
       <AccountMenu displayName={displayName} email={user.email} signOutAction={signOut} />

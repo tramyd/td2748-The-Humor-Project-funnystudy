@@ -18,7 +18,7 @@ export function CompleteProfileForm({
   return (
     <div
       id="profile-complete-root"
-      className="relative flex h-[100svh] min-h-[100svh] items-start justify-center overflow-hidden px-4 py-10 text-[var(--foreground)] sm:items-center sm:px-6 sm:py-16"
+      className="crackd-page relative flex h-[100svh] min-h-[100svh] items-start justify-center overflow-hidden px-4 py-10 text-[var(--foreground)] sm:items-center sm:px-6 sm:py-16"
     >
       <div
         id="profile-bg-shell"

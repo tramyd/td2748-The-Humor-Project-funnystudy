@@ -31,7 +31,7 @@ export default async function SettingsPage() {
   return (
     <div
       id="settings-root"
-      className="relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 pt-6 pb-24 text-[var(--foreground)] sm:px-6 sm:pt-10"
+      className="crackd-page relative flex h-[100svh] min-h-[100svh] flex-col overflow-hidden px-4 pt-6 pb-24 text-[var(--foreground)] sm:px-6 sm:pt-10"
     >
       <main
         id="settings-content"
